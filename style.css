@@ -1,0 +1,52 @@
+/* 課題ガジェットの紹介ページ（Aero風） */
+:root {
+  --text: #0b2a45;
+  --muted: #3c5d78;
+  --glass: rgba(255, 255, 255, .72);
+  --glass-border: rgba(255, 255, 255, .9);
+  --link: #0a5fa8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --text: #e6f3ff;
+    --muted: #b5cde0;
+    --glass: rgba(10, 40, 70, .72);
+    --glass-border: rgba(140, 200, 255, .35);
+    --link: #8fd0ff;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px 16px;
+  font-family: "Segoe UI", "Meiryo", "Hiragino Sans", sans-serif;
+  line-height: 1.8;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 20% 110%, #7ee08a 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 105%, #3fc6a8 0%, transparent 40%),
+    linear-gradient(180deg, #1e7fd6 0%, #5cc3f2 55%, #bdf0ff 100%);
+  background-attachment: fixed;
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 28px 20px;
+  border-radius: 18px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 40, 90, .3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+header img { width: 56px; height: 56px; }
+h1 { margin: 0; font-size: 26px; }
+h2 { margin: 28px 0 6px; font-size: 18px; border-bottom: 1px solid var(--glass-border); padding-bottom: 4px; }
+p, li { color: var(--text); }
+.lead { color: var(--muted); margin-top: 0; }
+a { color: var(--link); }
+code { font-size: 13px; overflow-wrap: anywhere; }
+ul { padding-left: 1.4em; }
+footer { margin-top: 28px; font-size: 13px; color: var(--muted); }
